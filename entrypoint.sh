@@ -8,5 +8,7 @@ if [ -d "/workspace_tmp" ]; then
     rm -rf /workspace_tmp
 fi
 
+
+
 # Execute the CMD passed as arguments
 exec "$@"
