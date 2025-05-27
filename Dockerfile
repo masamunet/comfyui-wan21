@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && pip3 install --upgrade pip \
   && pip3 install --no-cache-dir -U bitsandbytes \
   && pip3 install --no-cache-dir \
+  pyyaml \
   "triton>=3.0.0" \
   # sageattention \
   && rm -rf /root/.cache/pip
@@ -33,6 +34,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY runpod.yaml entrypoint.sh setup_sageattention.sh install-extentions.sh README.md /
 COPY *.ipynb /workspace_tmp/
+COPY download_models.yaml /workspace_tmp/
 
 WORKDIR /workspace_tmp/ComfyUI
 
