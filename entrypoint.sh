@@ -22,7 +22,7 @@ if [ ! -z "$CIVITAI_API_KEY" ]; then
         # Split CIVITAI_LORA_IDS by comma and iterate
         IFS=',' read -ra LORA_IDS <<< "$CIVITAI_LORA_IDS"
         for lora_id in "${LORA_IDS[@]}"; do
-            python3 download.py -t "$CIVITAI_API_KEY" -m "$lora_id" -o /workspace/ComfyUI/models/loras
+            python3 download.py -t "$CIVITAI_API_KEY" -m "$lora_id" -o /workspace/ComfyUI/models/loras > /dev/null 2>&1
         done
     fi
 fi
