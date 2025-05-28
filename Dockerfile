@@ -49,4 +49,4 @@ WORKDIR /workspace
 EXPOSE 8888
 EXPOSE 8188
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''", "--no-browser", "--ServerApp.allow_origin=*", "--ServerApp.allow_remote_access=True", "--notebook-dir=/workspace"]
+CMD ["sh", "-c", "if [ \"$IS_AUTO_BOOT_COMFYUI\" = \"true\" ]; then python3 /workspace/ComfyUI/main.py --listen --use-sage-attention --preview-method auto & fi; jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --NotebookApp.token='' --NotebookApp.password='' --no-browser --ServerApp.allow_origin=* --ServerApp.allow_remote_access=True --notebook-dir=/workspace"]

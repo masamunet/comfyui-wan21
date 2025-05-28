@@ -39,3 +39,9 @@ runpod.io上でJupyterLab統合のComfyUIを実行するためのDockerイメー
 ## 注意
 
 - .env.exampleを参考に .envファイルを作成。Dockerhubのユーザー名を設定してください
+
+
+### TODO
+
+- [] civitai_downloader実装
+  [Hearmeman24/CivitAI\_Downloader](https://github.com/Hearmeman24/CivitAI_Downloader)
