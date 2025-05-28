@@ -35,6 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY runpod.yaml entrypoint.sh setup_sageattention.sh install-extentions.sh README.md /
 COPY *.ipynb /workspace_tmp/
 COPY download_models.yaml /workspace_tmp/
+COPY workflows/ /workspace_tmp/ComfyUI/user/default/workflows/
 
 WORKDIR /workspace_tmp/ComfyUI
 

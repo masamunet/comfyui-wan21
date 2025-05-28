@@ -8,6 +8,25 @@ if [ -d "/workspace_tmp" ]; then
     rm -rf /workspace_tmp
 fi
 
+cd /
+git clone https://github.com/Hearmeman24/CivitAI_Downloader.git
+cd CivitAI_Downloader
+
+# Check if CIVITAI_API_KEY is set
+if [ ! -z "$CIVITAI_API_KEY" ]; then
+    # Check if CIVITAI_LORA_IDS is set
+    if [ ! -z "$CIVITAI_LORA_IDS" ]; then
+        # Create loras directory if it doesn't exist
+        mkdir -p /workspace/ComfyUI/models/loras
+        
+        # Split CIVITAI_LORA_IDS by comma and iterate
+        IFS=',' read -ra LORA_IDS <<< "$CIVITAI_LORA_IDS"
+        for lora_id in "${LORA_IDS[@]}"; do
+            python3 download.py -t "$CIVITAI_API_KEY" -m "$lora_id" -o /workspace/ComfyUI/models/loras
+        done
+    fi
+fi
+
 cd /workspace
 # 環境変数を読み込み、自動実行する
 
