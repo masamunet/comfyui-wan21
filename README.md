@@ -39,3 +39,5 @@ runpod.io上でJupyterLab統合のComfyUIを実行するためのDockerイメー
 ## 注意
 
 - .env.exampleを参考に .envファイルを作成。Dockerhubのユーザー名を設定してください
+- CivitAI APIキーとLoRA IDを使用する場合は、パブリックなモデルのIDを指定してください
+- プライベートなモデルIDを.envファイルに設定する場合は、そのファイルがGitにコミットされないよう注意してください
