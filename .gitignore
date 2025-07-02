@@ -19,3 +19,5 @@ output/
 __pycache__/
 *.pyc
 .env
+
+docs/loras.yaml
