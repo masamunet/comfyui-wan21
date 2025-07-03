@@ -31,12 +31,12 @@ cd /workspace
 # 環境変数を読み込み、自動実行する
 
 if [ "$IS_SAGEATTENTION_AUTO_SETUP" = "true" ]; then
-    jupyter nbconvert --to notebook --execute ./setup_sageattention.ipynb --inplace &
+    python3 -m nbconvert --to notebook --execute ./setup_sageattention.ipynb --inplace &
     SAGEATTENTION_PID=$!
 fi
 
 if [ "$IS_AUTO_MODEL_DOWNLOAD" = "true" ]; then
-    jupyter nbconvert --to notebook --execute ./download-models.ipynb --inplace &
+    python3 -m nbconvert --to notebook --execute ./download-models.ipynb --inplace &
     MODEL_DOWNLOAD_PID=$!
 fi
 
