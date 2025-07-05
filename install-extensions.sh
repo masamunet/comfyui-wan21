@@ -15,6 +15,8 @@ custom_nodes=(
   "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation.git"
   "https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git"
   "https://github.com/rgthree/rgthree-comfy.git"
+  "https://github.com/BlenderNeko/ComfyUI_TiledKSampler.git"
+  "https://github.com/shiimizu/ComfyUI-TiledDiffusion.git"
 )
 
 for node in ${custom_nodes[@]}; do
