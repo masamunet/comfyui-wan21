@@ -18,11 +18,11 @@ TAG ?= latest
 .PHONY: build push build-and-push
 
 build:
-	docker buildx build --platform linux/amd64 --load -t $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) .
+	docker buildx build --no-cache --pull --platform linux/amd64 --load -t $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) .
 
 push:
 	docker push $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG)
 
 build-and-push: bp
 bp:
-	docker buildx build --platform linux/amd64 --push -t $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) .
+	docker buildx build --no-cache --pull --platform linux/amd64 --push -t $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) .

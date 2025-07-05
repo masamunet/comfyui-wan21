@@ -3,7 +3,10 @@ FROM masamunet/runpod-comfyui
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Fix GPG keys issue
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub || true \
+  && apt-get update || apt-get update --allow-unauthenticated \
+  && apt-get install -y --no-install-recommends \
   build-essential \
   cmake \
   wget \
@@ -21,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   git-lfs \
   curl \
   p7zip-full \
+  python3-dev \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean \
   && git lfs install \

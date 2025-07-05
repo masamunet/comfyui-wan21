@@ -17,6 +17,7 @@ custom_nodes=(
   "https://github.com/rgthree/rgthree-comfy.git"
   "https://github.com/BlenderNeko/ComfyUI_TiledKSampler.git"
   "https://github.com/shiimizu/ComfyUI-TiledDiffusion.git"
+  "https://github.com/fluffydiveX/ComfyUI-hvBlockswap.git"
 )
 
 for node in ${custom_nodes[@]}; do
