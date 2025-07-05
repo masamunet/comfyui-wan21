@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   openssh-server \
   git-lfs \
   curl \
+  p7zip-full \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean \
   && git lfs install \
